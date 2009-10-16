@@ -1,0 +1,6 @@
+
+
+Don't forget to include the javascript and stylesheet in your application.html.erb
+<%= stylesheet_link_tag 'calendar' %>
+<%= javascript_include_tag 'calendar' %>
+

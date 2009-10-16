@@ -1,0 +1,40 @@
+h1. FormtasticEnum
+
+An extension for Formtastic[1] to generate lightweight javascript calendar date inputs using the Rails Date Kit[2]
+
+h2. Example
+
+Where Task#due_date is a :date field
+
+<pre><code><% semantic_form_for @task do |form| %>
+  <% form.inputs do %>
+    <%= form.input :due_date, :as => :calendar
+  <% end %>
+<% end %></code></pre>
+
+h2. Dependencies
+
+You must have the formtastic gem/plugin added to your application.
+
+Required images, javascript and stylesheet can be installed using the generator:
+
+<pre><code>./script/generate formtastic_calendar</code></pre>
+
+Don't forget to add them to your application layout
+
+<pre><code><%= stylesheet_link_tag 'calendar' %>
+<%= javascript_include_tag 'calendar' %></code></pre>
+
+h2. Todo
+
+Test, test, test...
+
+Attempt to port this to unobtrusive javascript, and provide graceful degradation if possible.
+
+h2. References
+
+fn1. "Formtastic @ GitHub":http://github.com/justinfrench/formtastic
+
+fn2. "Rails Date Kit":http://www.methods.co.nz/rails_date_kit/rails_date_kit.html
+
+Copyright (c) 2009 Paul Smith, released under the MIT license

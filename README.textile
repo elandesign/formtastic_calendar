@@ -1,4 +1,4 @@
-h1. FormtasticEnum
+h1. FormtasticCalendar
 
 An extension for Formtastic[1] to generate lightweight javascript calendar date inputs using the Rails Date Kit[2]
 
@@ -8,9 +8,11 @@ Where Task#due_date is a :date field
 
 <pre><code><% semantic_form_for @task do |form| %>
   <% form.inputs do %>
-    <%= form.input :due_date, :as => :calendar
+    <%= form.input :due_date, :as => :calendar, :format => '%d %b %Y' %>
   <% end %>
 <% end %></code></pre>
+
+:format is optional as it will default to the local default date format as defined in <code>ActiveSupport::CoreExtensions::Date::Conversions::DATE_FORMATS</code>.
 
 h2. Dependencies
 

@@ -9,7 +9,7 @@ module ElanDesign
       #
       def calendar_input(method, options = {})
         format = options[:format] || ActiveSupport::CoreExtensions::Date::Conversions::DATE_FORMATS[:default] || '%d %b %Y'
-        input_simple(:string, method, calendar_options(format, object.send(method)).merge(options))
+        string_input(method, calendar_options(format, object.send(method)).merge(options))
       end
 
       # Generate html input options for the calendar_input
